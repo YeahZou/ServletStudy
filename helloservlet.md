@@ -53,7 +53,7 @@ public class HelloServlet extends HttpServlet {
 > cd <CATALINA_HOME>\webapps\helloservlet\WEB-INF
 > javac -d classes src\mypkg\HelloServlet.java
 ```
-** 说明 **
+**说明**
 1. 编译这段代码需要```Servler API```库的支持，它不包含在JDK 或 Java SE内（但是Java EE的一部分），在Tomcat 的```<CATALINA_HOME>/lib```目录下提供了包含该API的包```servlet-api.jar```。如果编译不通过，可以将该jar包复制一份到```<JAVA_HOME>/jre/lib/ext```(jdk扩展目录)目录，也可以将该jar文件添加到```CLASSPATH```中。  
 2. 通过给定```-d```选项，指定编译后的class文件的存放位置  
 3. 我们没有从最原始的```Servlet```接口开始写代码，而是通过其子类```javax.servlet.http.HttpServlet```创建一个servlet。  
