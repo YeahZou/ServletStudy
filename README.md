@@ -53,7 +53,7 @@ public class HelloServlet extends HttpServlet {
 > cd <CATALINA_HOME>\webapps\helloservlet\WEB-INF
 > javac -d classes src\mypkg\HelloServlet.java
 ```
-**说明**
+** 说明 **
 1. 编译这段代码需要```Servler API```库的支持，它不包含在JDK 或 Java SE内（但是Java EE的一部分），在Tomcat 的```<CATALINA_HOME>/lib```目录下提供了包含该API的包```servlet-api.jar```。如果编译不通过，可以将该jar包复制一份到```<JAVA_HOME>/jre/lib/ext```(jdk扩展目录)目录，也可以将该jar文件添加到```CLASSPATH```中。  
 2. 通过给定```-d```选项，指定编译后的class文件的存放位置  
 3. 我们没有从最原始的```Servlet```接口开始写代码，而是通过其子类```javax.servlet.http.HttpServlet```创建一个servlet。  
@@ -84,7 +84,7 @@ web用户通过向指定的URL发起请求来调用 servlet，但是servlet运�
    </servlet-mapping>
 </web-app>
 ```
-以上配置定义了一个叫```HelloServlet```的servlet，它在```mypkg.HelloServlet.class```中被实现，与URL ```/sayhello```建立映射关系。“/”为webapp “helloservlet”的根路径（context root）。这样一来，就可以通过URL ```http://localhost:8080/helloservlet/sayhello``` 访问servlet ```HelloServlet```。  
+以上配置定义了一个叫```HelloServlet```的servlet，它在```mypkg.HelloServlet.class```中被实现，与URL ```/sayhello```建立映射关系。“/”为webapp “helloservlet”的根路径（context root）。这样一来，就可以通过URL ```http://localhost:8080/helloservlet/sayhello``` 访问servlet ```HelloServlet```。注意```webapp```下的目录名称叫什么，url前缀部分就是什么。  
 ![URL-Servlet的映射关系](https://note.youdao.com/yws/api/personal/file/WEBbf2c5b3b25ce6f734352fd21f37e4de4?method=getImage&version=1979&cstk=4qWr_Bwl)
 ## 运行 HelloServlet Servlet
 启动 Tomcat，只要看到Tomcat 控制台输出以下信息，则说明发布成功。  
