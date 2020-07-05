@@ -5,15 +5,34 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
  
   <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
- 
+  
+  <!-- 多个 servlet 分开写，放多个 servlet 标签中，否则只有最后一个 servlet 有效 -->
+  <!-- 
+   <servlet>
+      <servlet-name>HelloWorldServlet</servlet-name>
+      <servlet-class>mypkg.HelloServlet</servlet-class>
+	  <servlet-name>ServletRequestDemo</servlet-name>
+      <servlet-class>mypkg.ServletRequestDemo</servlet-class>
+   </servlet>
+   -->
    <servlet>
       <servlet-name>HelloWorldServlet</servlet-name>
       <servlet-class>mypkg.HelloServlet</servlet-class>
    </servlet>
- 
-   <!-- 所有 <servlet> 元素都必须放在一起，并置于 <servlet-mapping> 元素前 -->
+   
+   <servlet>
+	  <servlet-name>ServletRequestDemo</servlet-name>
+      <servlet-class>mypkg.ServletRequestDemo</servlet-class>
+   </servlet>
+   
+   <!-- 所有 <servlet> 元素都必须放在一起，并置于 <servlet-mapping> 元素前，有多少个 servlet 标签，就对应多少个 servlet-mapping -->
    <servlet-mapping>
       <servlet-name>HelloWorldServlet</servlet-name>
       <url-pattern>/sayhello</url-pattern>
+   </servlet-mapping>
+   
+   <servlet-mapping>
+	  <servlet-name>ServletRequestDemo</servlet-name>
+      <url-pattern>/requestdemo</url-pattern>
    </servlet-mapping>
 </web-app>
