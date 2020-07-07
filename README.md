@@ -7,7 +7,7 @@
 - <HELLOSERVLET>\MATE-INF：该目录客户端也不能直接访问，用于存放和具体的服务器（Tomcat、Glassfish...）相关的资源文件和配置文件(如context.xml)。对应的，WEB-INF中的资源文件和配置文件和 webapp相关，和服务器无关。  
 # 用记事本创建webapp
 ## 创建 ```Hello Servlet.java``` Servlet
-写一个“HelloServlet.java”servlet，它将被编译为“HelloServlet.class”，客户端通过访问URL```http://localhost:8080/helloServlet/sayHello```调用```HelloServlet.class```。  
+写一个“HelloServlet.java”servlet，它将被编译为“HelloServlet.class”，客户端通过访问URL```http://localhost:8080/helloservlet/sayhello```调用```HelloServlet.class```。  
 为了能够正常发布，一个```servlet```应该被放置在一个Java包内。这里我把它放在```mypkg```包内，代码如下：  
 ```java
 // <CATALINA_HOME>\webapps\helloservlet\WEB-INF\src\mypkg\HelloServlet.java
